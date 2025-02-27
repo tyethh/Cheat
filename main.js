@@ -27,7 +27,6 @@ async function createRecord(data) {
         if (response.ok) {
             const jsonResponse = await response.json();
             console.log('Created record with ID:', jsonResponse.id);
-            alert('Data sent successfully');
         } else {
             const errorResponse = await response.json(); // Log the error response for debugging
             console.error('Error response from Airtable:', errorResponse);
