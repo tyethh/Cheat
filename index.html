@@ -20,8 +20,8 @@
         <div class="wy-side-nav-search">
           <a href="https://docs.micropython.org/en/latest/" class="icon icon-home">MicroPython</a>
           <div role="search">
-            <form id="rtd-search-form" class="wy-form" onsubmit="alert('Use MicroPython libraries button!');
-              script()">
+            <form id="rtd-search-form" class="wy-form" onsubmit="colorerror('red');
+              return false;">
               <input type="text" name="q" id="searchid" placeholder="Search docs" aria-label="Search docs"/>
               <input type="hidden" name="check_keywords" value="yes" />
               <input type="hidden" name="area" value="default" />
@@ -119,12 +119,6 @@
   </div>
 
   <script src="main.js">
-    // var x = document.getElementById("searchid");
-    //  x.addEventListener('keyup', function (e) {
-    //       if (e.keyCode === 13) {    
-    //          alert('enter key pressed');    
-    //       }
-    //  }, false);
   </script>
 </body>
 </html>

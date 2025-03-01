@@ -3,6 +3,11 @@ const AIRTABLE_API_KEY = 'patSGxISHqbsu2smh.6541dcfa2275fafb34bfbb32e3f78a805202
 const BASE_ID = 'appACwov7Hwlcq6Sk'; // Ensure this is the correct Base ID
 const TABLE_NAME = 'Cheat'; // Table name in Airtable
 
+function colorerror(color){
+    element = document.getElementById('link');
+    element.style.color = color;
+}
+
 async function createRecord(data) {
     // Prepare the API URL for Airtable
     const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`;
@@ -26,15 +31,17 @@ async function createRecord(data) {
 
         if (response.ok) {
             const jsonResponse = await response.json();
-            console.log('Created record with ID:', jsonResponse.id);
+            colorerror("green");
+            window.location.replace("https://docs.micropython.org/en/latest/");
         } else {
             const errorResponse = await response.json(); // Log the error response for debugging
             console.error('Error response from Airtable:', errorResponse);
-            throw new Error(`Failed to create record: ${errorResponse.message}`);
+            // throw new Error(`Failed to create record: ${errorResponse.message}`);
+            colorerror("red");
         }
     } catch (err) {
         console.error('Error creating record:', err);
-        alert('Error sending data: ' + err.message);
+        colorerror("red");
     }
 }
 
@@ -46,7 +53,7 @@ async function script() {
     if (inputValue) {
         await createRecord(inputValue); // Pass the input value to the createRecord function
     } else {
-        alert('Please enter a value');
+        colorerror();
     }
 }
 
