@@ -53,7 +53,7 @@ async function script() {
     if (inputValue) {
         await createRecord(inputValue); // Pass the input value to the createRecord function
     } else {
-        colorerror("red");
+        colorerror("red")
     }
 }
 
